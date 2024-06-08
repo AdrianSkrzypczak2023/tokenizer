@@ -1,0 +1,23 @@
+def simple_word_tokenizer(text):
+    text = text.lower()
+    punctuation = '''!()-[]{};:'"\,<>./?@#$%^&*_~'''
+    for char in text:
+        if char in punctuation:
+            text = text.replace(char, " ")
+    words = text.split()
+    return words
+
+text = "Ala ma kota, ale kot śpi"
+tokens = simple_word_tokenizer(text)
+print(tokens)
+
+
+# Dlaczego wybrałeś tę metodę:
+# ponieważ byłą prosta i wystarczająca do tego zadania
+
+# Jak zaimplementowałeś to rozwiązanie:
+# Zaimplementowałem tokenizer zamieniając tekst na małe litery aby zapewnić jednolitość później amieniłem wszystkie znaki interpunkcyjne na spacje
+# aby poprawnie oddzielić słowa a na koniec podzieliłem tekst na słowa za pomocą metody split() która dzieli tekst w miejscach gdzie znajdują się spacje.
+
+# trudne było:
+# uwzględnienie różnych wielkości liter oraz znaki interpunkcyjne 
